@@ -1,0 +1,184 @@
+:root {
+  --text: #1c1f23;
+  --muted: #5f6771;
+  --border: #e4e7eb;
+  --surface: #f5f6f8;
+  --accent: #1d5fa8;
+  --page: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--page);
+  color: var(--text);
+  font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+a { color: var(--accent); text-underline-offset: 3px; }
+
+h1, h2, h3 { line-height: 1.25; margin: 0; }
+h1 { font-size: 2.2rem; letter-spacing: -0.02em; }
+h2 { font-size: 1.15rem; margin-bottom: 0.6rem; }
+h3 { font-size: 1.1rem; }
+
+.lead { color: var(--muted); font-size: 1.15rem; margin: 0.5rem 0 0; }
+
+/* Header and footer */
+.site-header,
+.site-footer,
+main {
+  width: 100%;
+  max-width: 720px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+.site-header {
+  max-width: 1040px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px 24px;
+  padding-block: 24px;
+}
+
+.site-name { color: var(--text); font-weight: 600; text-decoration: none; }
+
+.site-header nav { display: flex; gap: 22px; }
+.site-header nav a { color: var(--muted); text-decoration: none; padding-block: 4px; }
+.site-header nav a:hover { color: var(--text); }
+.site-header nav a[aria-current="page"] { color: var(--text); border-bottom: 2px solid var(--accent); }
+
+main { flex: 1; padding-block: 32px 56px; }
+main.wide { max-width: 1040px; }
+
+.site-footer {
+  max-width: 1040px;
+  padding-block: 24px;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+/* About */
+.intro { display: flex; align-items: center; gap: 32px; margin-bottom: 40px; }
+
+.portrait {
+  flex: none;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 0%;
+  background: var(--surface);
+}
+
+section + section { margin-top: 36px; }
+section p { margin: 0 0 0.9rem; }
+
+.education { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.education strong { display: block; font-weight: 600; }
+.education span { color: var(--muted); }
+
+.tags, .links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; }
+.tags { gap: 8px; }
+.tags li {
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+.links { gap: 20px; }
+
+/* Projects */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr));
+  gap: 36px 32px;
+  margin-top: 36px;
+}
+
+.project { display: flex; flex-direction: column; }
+
+.project-media {
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.project-media img,
+.project-media video,
+.project-media iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+}
+
+.project-media-empty {
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.project h3 { margin-top: 14px; }
+.project h3 a { color: var(--text); text-decoration: none; }
+.project h3 a:hover { color: var(--accent); }
+
+/* Project detail page */
+.back { margin: 0 0 20px; font-size: 0.95rem; }
+#project-page .tags { margin: 16px 0 24px; }
+#project-page .project-media { margin-bottom: 24px; }
+.project-body p { margin: 0 0 1rem; }
+#project-page .links { margin-top: 24px; }
+.project p { margin: 6px 0 10px; color: var(--muted); }
+.project .tags { margin-bottom: 10px; }
+.project .tags li { font-size: 0.8rem; }
+.project .links { gap: 16px; font-size: 0.95rem; }
+
+/* CV */
+.cv-heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.button {
+  padding: 7px 16px;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+.button:hover { background: #174d89; }
+
+.cv-viewer {
+  display: block;
+  width: 100%;
+  height: 85vh;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.cv-fallback { margin: 0; padding: 24px; }
+
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  h1 { font-size: 1.9rem; }
+  .intro { flex-direction: column; align-items: flex-start; gap: 20px; }
+  .portrait { width: 130px; height: 130px; }
+}
