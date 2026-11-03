@@ -26,3 +26,4 @@ ffmpeg -i demo.gif -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2
 3. In the repository, go to **Settings > Pages** and set the source to **Deploy from a branch**, `main`, `/ (root)`.
 
 The site then appears at `https://<username>.github.io`.
+
