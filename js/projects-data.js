@@ -22,7 +22,7 @@ const PROJECTS = [
     details: [
       "While working on my master's, I often imagined drones flying autonomously through forests, thinking this technology could make search-and-rescue missions more efficient. But under the canopy, we face GNSS-denied environments and limited communication, which present significant challenges. Developing an information-sharing system is essential for peer-to-peer odometry calibration and informed navigation decisions.",
       "At the start of my master's thesis, I divided the project into three components: communication, coordination, and exploration. For each, I used a 2D model to test configurations and assess how area size influenced exploration efficiency. I was surprised that robust design and initial planning can address connectivity issues, revealing that system architecture was the primary challenge for long-term team planning.",
-      "I built the system using ROS2 and C++ and am now testing its reliability. My next step is to integrate it with PX4 and run test flights with 10 drones over an area of about 100 to 300 square meters.",
+      "I built the system using ROS2 and C++ and am now testing its reliability. My next step is to integrate it with PX4 and run test flights with 10 drones over an area of about 10000 to 40000 square meters.",
       "The code will be open source once I finish my thesis."
     ],
     tags: ["ROS2", "C++","Autonomy"],
